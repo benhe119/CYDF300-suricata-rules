@@ -1,0 +1,7 @@
+alert tcp any any -> any 80 (msg:"http detected"; content:"GET /"; content:"Host: gilgil.net"; sid:10001; rev:1;)
+alert tcp any any -> any 80 (msg:"http detected"; content:"GET /"; content:"Host: www.gilgil.net"; sid:10001; rev:1;)
+alert tcp any any -> any 80 (msg:"http detected"; content:"GET /"; content:"Host: test.gilgil.net"; sid:10001; rev:1;)
+alert tcp any any -> any 80 (msg:"http detected"; content:"GET /"; content:"Host: snoopspy.com"; sid:10001; rev:1;)
+alert tcp any any -> any 443 (msg:"https detected"; content: "naver.com"; tls_sni; fast_pattern; sid: 10002; rev:1;)
+alert tcp any any -> any 443 (msg:"https detected"; content: "twitter.com"; tls_sni; fast_pattern; sid: 10002; rev:1;)
+alert tcp any any -> any 443 (msg:"https detected"; content: "facebook.com"; tls_sni; fast_pattern; sid: 10002; rev:1;)
